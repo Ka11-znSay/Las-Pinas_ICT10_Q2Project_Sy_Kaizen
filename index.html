@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Basketball Varsity</title>
+
+    <style>
+
+    nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 18px;
+    margin-bottom: 30px;
+    background: #1b202c;
+    border-bottom: 2px solid #ff7629;
+    }
+
+    nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    transition: 0.2s;
+    }
+
+    nav a:hover {
+    color: #ff7629;
+    } 
+    
+    
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+            background: #10131c;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .reactor {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
+            border: 3px solid #ff7629;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .reactor::before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 59px;
+            top: 0;
+            left: 17px;
+            border-left: 2px solid #ff7629;
+            border-right: 2px solid #ff7629;
+            border-radius: 50%;
+        }
+
+        .reactor::after {
+            content: "";
+            position: absolute;
+            width: 59px;
+            height: 25px;
+            top: 17px;
+            left: 0;
+            border-top: 2px solid #ff7629;
+            border-bottom: 2px solid #ff7629;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(24px, 5vw, 36px);
+            color: #ff7629;
+            margin: 0 0 12px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #c4c7d0;
+            margin: 0;
+        }
+
+        main {
+            width: 100%;
+            max-width: 380px;
+            padding: 30px;
+            background: #1b202c;
+            border: 1px solid #343b49;
+            border-top: 4px solid #ff7629;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            background: #10131c;
+            color: white;
+            border: 1px solid #424958;
+            border-radius: 5px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #ff7629;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 13px;
+            background: #ff7629;
+            color: #10131c;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        input[type="button"]:hover {
+            background: #ff914f;
+            transform: translateY(-2px);
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 12px;
+            background: #10131c;
+            border-radius: 5px;
+            border: 1px solid #343b49;
+            text-align: center;
+            font-size: 17px;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 450px) {
+            main {
+                padding: 22px;
+            }
+
+            header p {
+                max-width: 330px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="element-checker/index.html">Element Checker</a>
+    <a href="meet-the-creator/index.html">Meet the Creator</a>
+    </nav>
+
+
+    <header>
+        <div class="reactor"></div>
+        <h1>Basketbool Verity</h1>
+        <p>Welcome to the Basketbool Verity! Join to lose all your games and waste your time!</p>
+    </header>
+
+    <main>
+        <form>
+            <input type="text" id="first_name" placeholder="Enter your first name"><br>
+            <input type="text" id="last_name" placeholder="Enter your last name"><br>
+            <input type="button" py-click="candidate_checker" value="Enter">
+        </form>
+
+        <div id="result"></div>
+    </main>
+
+    <py-script src="main.py"></py-script>
+</body>
+</html>
